@@ -1,54 +1,4 @@
-.p1 {
-    color: white;
-    font-size: 25px;
-}
-.p2 {
-    text-align: center;
-    font-size: 35px;
-    font-style: italic;
-    font-family: cursive;
-}
-.header {
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(160, 160, 160);
-}
-body {
-    margin: 0;
-}
-.navbar {
-    justify-content: center;
-    height: 100px;
-    background-color: gray;
-    color: whitesmoke;
-    margin-bottom: 15px;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    font-size: 35px;
-}
-
-.item {
-    background-color: rgb(37, 37, 37);
-    color: white;
-    font-weight: normal;
-    font-size: 15px;
-    padding-left: 30px;
-    padding-right: 20px;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    border: solid white;
-    border-width: 1px;
-}
-
-.divbg {
-    margin-top: 0px;
-}
-
-.button {
+.button{
   background-color: rgb(53, 52, 52);
   border: none;
   color: white;
@@ -59,11 +9,18 @@ body {
   font-size: 18px;
   border: solid white;
   border-width: 1px;
+  cursor: pointer;
+  transition: transform .1s;
 }
 
-.button:hover {
-    size: 110%;
+.button:hover{
+    transform: scale(1.07);
     background-color: rgb(83, 83, 83);
+}
+
+.button:active{
+    background-color: rgb(218, 218, 218);
+    transform: scale(1.02);
 }
 
 nav{
@@ -85,9 +42,9 @@ nav{
 }
 
 .images{
-    margin: 1%;
-    width: 65%;
-    height: 65%;
+    margin: 0;
+    width: 75%;
+    height: 75%;
 }
 
 .images-div{
@@ -106,9 +63,29 @@ nav{
     font-size: 18px;
     border: solid white;
     border-width: 1px;
-    
+    cursor: pointer;
+    transition: transform .1s;
 }
-.button-img:hover {
-    size: 110%;
+
+.button-img:hover{
+    transform: scale(1.03);
     background-color: rgb(83, 83, 83);
+}
+
+.button-img:active{
+    background-color: rgb(214, 214, 214);
+    transform: scale(0.99);
+}
+
+.header-text{
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.portrait{
+    transition: transform .2s;
+}
+
+.portrait:hover{
+    transform: scale(1.02);
 }

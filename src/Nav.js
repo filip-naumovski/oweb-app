@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function Nav(){
   return(
       <nav>
-          <h3>OWEB Test App</h3>
+          <h3 className="header-text">OWEB Test App</h3>
           <ul className='nav-links'>
                 <Link to='/'>
                     <li><button className='button'>Home</button></li>

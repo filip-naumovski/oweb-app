@@ -34,7 +34,7 @@ function Home(){
         <table>
             <tr>
 
-                <td>
+                <td style={{textAlign: "left"}}>
                     <div>
                         <div>
                             <img src='https://picsum.photos/seed/picsum/500' alt="" className="images"></img>
@@ -46,7 +46,7 @@ function Home(){
                     </div>
                 </td>
 
-                <td>
+                <td style={{textAlign: "left"}}>
                     <div>
                         <div>
                             <img src='https://picsum.photos/seed/pics/500' alt="" className="images"></img>

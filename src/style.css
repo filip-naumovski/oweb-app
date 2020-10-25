@@ -1,0 +1,114 @@
+.p1 {
+    color: white;
+    font-size: 25px;
+}
+.p2 {
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+    font-family: cursive;
+}
+.header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(160, 160, 160);
+}
+body {
+    margin: 0;
+}
+.navbar {
+    justify-content: center;
+    height: 100px;
+    background-color: gray;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    font-size: 35px;
+}
+
+.item {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-weight: normal;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    border: solid white;
+    border-width: 1px;
+}
+
+.divbg {
+    margin-top: 0px;
+}
+
+.button {
+  background-color: rgb(53, 52, 52);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border: solid white;
+  border-width: 1px;
+}
+
+.button:hover {
+    size: 110%;
+    background-color: rgb(83, 83, 83);
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    min-height: 10vh;
+    background: rgb(37, 37, 37);
+    color: white;
+    font-size: 150%;
+}
+
+.nav-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.images{
+    margin: 1%;
+    width: 65%;
+    height: 65%;
+}
+
+.images-div{
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.button-img{
+    background-color: rgb(53, 52, 52);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: solid white;
+    border-width: 1px;
+    
+}
+.button-img:hover {
+    size: 110%;
+    background-color: rgb(83, 83, 83);
+}

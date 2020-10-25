@@ -16,7 +16,15 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 }
-
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 
 .button{
@@ -60,6 +68,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    margin-right: 8%;
 }
 
 .images{
@@ -92,7 +101,9 @@ nav{
 }
 
 .header-text{
-    font-size: 130%;
+    margin-right: auto;
+    text-align: left;
+    font-size: 150%;
     font-weight: bold;
 }
 

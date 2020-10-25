@@ -16,6 +16,9 @@ function Nav(){
                 <Link to='/gallery'>
                     <li><button className='button'>Gallery</button></li>
                 </Link>
+                <Link to='/survey'>
+                    <li><button className='button'>Survey</button></li>
+                </Link>
           </ul>
       </nav>
   )

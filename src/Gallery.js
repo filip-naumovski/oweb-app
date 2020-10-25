@@ -1,5 +1,5 @@
 import './style.css';
-import React, { useCallback , useState } from 'react'
+import React, { useState } from 'react'
 import thumbsUp from './thumbs-up.png'
 
 function Home(){
@@ -33,7 +33,6 @@ function Home(){
     return(
         <table>
             <tr>
-
                 <td style={{textAlign: "left"}}>
                     <div>
                         <div>
@@ -57,7 +56,6 @@ function Home(){
                         </div>
                     </div>
                 </td>
-
             </tr>
         </table>
     )

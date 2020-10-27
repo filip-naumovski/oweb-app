@@ -4,13 +4,6 @@ import portrait from './portrait.jpg'
 import { motion } from 'framer-motion'
 
 function Home() {
-    const [isLoaded, setIsLoaded] = useState(false)
-    useEffect(() => {
-        setIsLoaded(() => {
-            return true;
-        })
-        console.log(isLoaded);
-    }, [])
 
     return (
         <motion.div initial={{ scale: 1, opacity: 1, x: -2000 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: '1.2' }}>
@@ -26,7 +19,7 @@ function Home() {
                         <p style={{ fontSize: "120%" }}>Trump's political positions have been described as populist, protectionist, isolationist,
                                  and nationalist. He entered the 2016 presidential race as a <a style={{ color: "black" }} href="https://en.wikipedia.org/wiki/Republican_Party_(United_States)">Republican</a> and was elected in a surprise electoral college victory over <a style={{ color: "black" }} href="https://en.wikipedia.org/wiki/Democratic_Party_(United_States)">Democratic</a> nominee <a style={{ color: "black" }} href="https://en.wikipedia.org/wiki/Hillary_Clinton">Hillary Clinton</a> while losing the popular vote.
                                   He became the oldest first-term U.S. president and the first without prior military or government service.
-                            </p>
+                        </p>
                     </td>
                 </tr>
             </table>

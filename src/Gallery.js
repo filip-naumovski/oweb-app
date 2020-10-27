@@ -3,16 +3,9 @@ import React, { useState, useEffect } from 'react'
 import thumbsUp from './thumbs-up.png'
 import loading from './loading.gif'
 import heart from './heart.png'
-import { CSSTransition } from 'react-transition-group'
 import { motion } from 'framer-motion'
 
 function Gallery() {
-    const [isLoaded, setIsLoaded] = useState(false)
-    useEffect(() => {
-        setIsLoaded(() => {
-            return true;
-        })
-    }, [])
 
     const [state, setState] = useState({
         likes1: 0,
@@ -121,11 +114,6 @@ function Gallery() {
             }
             )
         }
-    }
-
-    const variants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, scale: 1.1 }
     }
 
     return (

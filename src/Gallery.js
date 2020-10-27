@@ -213,7 +213,7 @@ function Gallery() {
                                                             <input type="text" placeholder="Comment" value={textForm.form1} onChange={handleChange} name="form1" />
                                                             <button type="submit" className="button-comment" >Submit</button>
                                                         </form>
-                                                        <div style={{ maxWidth: '230px' }}>{comments.comments1.map((comment, key) => <h3 className="comment" key={key}>{comment}<br></br></h3>)}</div>
+                                                        <div style={{ maxWidth: '230px' }}>{comments.comments1.map((comment, key) => <h3 className="comment" key={key}>{comment}<hr></hr></h3>)}</div>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -241,11 +241,11 @@ function Gallery() {
                                             <tr>
                                                 <td style={{ wordWrap: "break-word", maxWidth: '350px' }}>
                                                     <div style={{ textAlign: "left", position: "relative" }}>
-                                                        <form name="submit2" onSubmit={e => handleSubmit(e)} style={{ marginLeft: '2px' }}>
+                                                        <form name="submit2" onSubmit={e => handleSubmit(e)}>
                                                             <input type="text" placeholder="Comment" value={textForm.form2} onChange={handleChange} name="form2" />
                                                             <button type="submit" className="button-comment" >Submit</button>
                                                         </form>
-                                                        <div style={{ maxWidth: '230px' }}>{comments.comments2.map((comment, key) => <h3 className="comment" key={key}>{comment}<br></br></h3>)}</div>
+                                                        <div style={{ maxWidth: '230px' }}>{comments.comments2.map((comment, key) => <h3 className="comment" key={key}>{comment}<hr></hr></h3>)}</div>
                                                     </div>
                                                 </td>
                                                 <td>

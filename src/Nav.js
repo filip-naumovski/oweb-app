@@ -18,23 +18,23 @@ function Nav() {
         <nav>
             <h3 className="header-text">OWEB Test App</h3>
             <ul className='nav-links'>
-                <Link to='/'>
+                <Link style={{ textDecoration: "none" }} to='/'>
                     <li><button className='button'>Home</button></li>
                 </Link>
                 <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><button className='button'>Favorites</button>
                     {dropdownVisible
                         ? (<motion.ul initial={{ y: '-30vh' }} animate={{ y: 0 }} transition={{ duration: '0.4' }} className="dropdown-content-visible">
-                            <Link to='/music'>
+                            <Link style={{ textDecoration: "none" }} to='/music'>
                                 <li>
                                     <button className='button'> Music </button>
                                 </li>
                             </Link>
-                            <Link to='/food'>
+                            <Link style={{ textDecoration: "none" }} to='/food'>
                                 <li>
                                     <button className='button'> Food </button>
                                 </li>
                             </Link>
-                            <Link to='/movies'>
+                            <Link style={{ textDecoration: "none" }} to='/movies'>
                                 <li>
                                     <button className='button'> Movies </button>
                                 </li>
@@ -43,11 +43,14 @@ function Nav() {
                         : null
                     }
                 </li>
-                <Link to='/gallery'>
+                <Link style={{ textDecoration: "none" }} to='/gallery'>
                     <li><button className='button'>Gallery</button></li>
                 </Link>
-                <Link to='/contact'>
+                <Link style={{ textDecoration: "none" }} to='/contact'>
                     <li><button className='button'>Contact</button></li>
+                </Link>
+                <Link style={{ textDecoration: "none" }} to='/survey'>
+                    <li><button className='button'>Survey</button></li>
                 </Link>
             </ul>
         </nav >

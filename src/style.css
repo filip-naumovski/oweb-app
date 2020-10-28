@@ -83,8 +83,8 @@ nav{
 
 .images{
     cursor: pointer;
-    width: 350px;
-    height: 350px;
+    width: 349px;
+    height: 349px;
 }
 
 .images-inv {
@@ -164,7 +164,7 @@ nav{
     position: relative;
     width: 100vh;
     height: 80vh;
-    background-color: rgba(0, 124, 226, 0.384);
+    background-color: rgba(0, 44, 80, 0.384);
     border-radius: 5%;
     color: white;
 }
@@ -219,10 +219,12 @@ nav{
 
 .table {
     margin-top: -10px;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     table-layout: fixed;
     max-width: 700px;
-    border-spacing: 10px;
+    border-spacing: 15px;
+    border-collapse: separate   ;
 }
 
 .heart {
@@ -257,8 +259,8 @@ nav{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: absolute;
     font-size: 250%;
-    margin-left: 50vh;
-    margin-right: 50vh;
+    margin-left: 28vw;
+    margin-right: 0;
     margin-top: 30vh;
     word-wrap: none;
     color: white;
@@ -355,9 +357,112 @@ nav{
     vertical-align: top;
     border: solid black 1px;
 }
+
+.paragraphTdFood {
+    position: absolute;
+    min-width: 32.5vw;
+    min-height: 288px;
+    max-height: 288px;
+    background-color: white;
+    opacity: 0.95;
+    vertical-align: top;
+    border: solid black 1px;
+}
+
 .paragraph {
     height: 288px;
     max-height: 288px;
     min-height: 288px;
     font-size: 20px;
+}
+
+.foodImages {
+    height: 288px;
+    width: 400px;
+    position: relative;
+    border: solid black 1px;
+    transition: all .1s ease-in;
+}
+
+.foodImages:hover {
+    transform: scale(1.02);
+}
+
+.surveyForm input {
+    display: block;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.surveyComment {
+    width: 300px;
+    height: 60px;
+}
+
+.button-comment-survey {
+    display: block;
+    background-color: rgb(53, 52, 52);
+    border: none;
+    color: white;
+    margin-top: 1px;
+    padding: 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: solid white;
+    border-width: 1px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.submitted-table {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 400px;
+    border-spacing: 15px;
+    border-collapse: separate   ;
+}
+
+.submittedTd {
+    background-image: linear-gradient(rgba(160, 160, 255, 0.582), rgba(255, 255, 255, 0.466));
+    border-radius: 5%;
+    min-height: 400px;
+}
+
+.submittedTd {
+    background-image: linear-gradient(rgba(160, 160, 255, 0.582), rgba(255, 255, 255, 0.466));
+    border-radius: 5%;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submittedTd h1 {
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    color: rgb(14, 14, 14);
+}
+
+.submittedTd p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 23px;
+    max-width: 300px;
+    word-wrap: break-word;
+    padding: 13px;
+}
+
+.surveyPopupHidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.surveyPopup {
+    text-align: center;
+    transition: all 1.5s ease-in;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.5);
 }

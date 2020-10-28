@@ -166,7 +166,6 @@ function Gallery() {
     const handleChange = (e) => {
         const value = e.target.value
         const name = e.target.name
-        console.log(name)
         if (name === "form1") {
             setTextForm((prevState) => {
                 const newState = {
@@ -190,7 +189,7 @@ function Gallery() {
     return (
         <div>
             <motion.h2 animate={{ scale: 1.5, y: -500, opacity: 0, }} transition={{ duration: '7' }} className="gallery-popup">Try double clicking the pictures!</motion.h2>
-            <motion.div initial={{ scale: 1, opacity: 1, y: 1000 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: '0.7' }}>
+            <motion.div initial={{ scale: 1, opacity: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: '0.7' }}>
                 <table className="table">
                     <tbody>
                         <img src='https://picsum.photos/seed/picsum/4000' alt="" className="images-inv" onLoad={imageLoaded("image1")} />

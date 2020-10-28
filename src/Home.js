@@ -1,6 +1,6 @@
 import './style.css';
 import React, { useState, useEffect } from 'react'
-import portrait from './portrait.jpg'
+import portrait from './resources/portrait.jpg'
 import { motion } from 'framer-motion'
 
 function Home() {

@@ -4,6 +4,7 @@ import Home from './Home';
 import Gallery from './Gallery';
 import Contact from './Contact';
 import Nav from './Nav';
+import Music from './Music';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path="/" exact component={Home} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/contact" component={Contact} />
+            <Route path="/music" component={Music} />
           </Switch>
         </div>
       </Router>

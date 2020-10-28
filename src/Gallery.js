@@ -1,8 +1,8 @@
 import './style.css';
 import React, { useState, useEffect } from 'react'
-import thumbsUp from './thumbs-up.png'
-import loading from './loading.gif'
-import heart from './heart.png'
+import thumbsUp from './resources/thumbs-up.png'
+import loading from './resources/loading.gif'
+import heart from './resources/heart.png'
 import { motion } from 'framer-motion'
 
 function Gallery() {
@@ -236,8 +236,9 @@ function Gallery() {
                                             <img src={heart} alt="" className={imageClicked.image2 ? "heart-showing" : "heart"} />
                                         </div>
                                     </div>
-                                    <table style={{ tableLayout: "fixed" }}>
-                                        <tbody>
+                                    <table style={{
+                                        tableLayout: "fixed"
+                                    }}>  <tbody>
                                             <tr>
                                                 <td style={{ wordWrap: "break-word", maxWidth: '350px' }}>
                                                     <div style={{ textAlign: "left", position: "relative" }}>

@@ -29,161 +29,86 @@ function Gallery() {
         comments2: []
     })
 
-    const imageLoaded = imageName => () => {
-        if (imageName === "image1") {
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.loaded1 = true
-                return newState
+    const imageLoaded = (e) => {
+        const name = e.target.name
+        setState((prevState) => {
+            const newState = {
+                ...prevState
             }
-            )
+            newState[name] = true
+            return newState
         }
-        else if (imageName === "image2") {
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.loaded2 = true
-                return newState
-            }
-            )
-        }
+        )
     }
 
-    const handleClickImg = imageName => () => {
-        if (imageName === "image1") {
-            setImageClicked((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.image1 = true
-                return newState
-            })
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.likes1++
-                return newState
-            })
-            setTimeout(() => setImageClicked((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.image1 = false
-                return newState
-            }), 850)
-        }
-        else if (imageName === "image2") {
-            setImageClicked((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.image2 = true
-                return newState
+    const handleClickImg = (e) => {
+        const name = e.target.name
+        const likeString = "likes" + name.charAt(name.length - 1)
+        setImageClicked((prevState) => {
+            const newState = {
+                ...prevState
             }
-            )
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.likes2++
-                return newState
-            })
-            setTimeout(() => setImageClicked((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.image2 = false
-                return newState
-            }), 850)
-        }
+            newState[name] = true
+            return newState
+        })
+        setState((prevState) => {
+            const newState = {
+                ...prevState
+            }
+            newState[likeString]++
+            return newState
+        })
+        setTimeout(() => setImageClicked((prevState) => {
+            const newState = {
+                ...prevState
+            }
+            newState[name] = false
+            return newState
+        }), 850)
     }
 
     const handleClick = (e) => {
         const name = e.target.value;
-        if (name === "button1") {
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.likes1++
-                return newState
+        setState((prevState) => {
+            const newState = {
+                ...prevState
             }
-            )
-        }
-        else if (name === "button2") {
-            setState((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.likes2++
-                return newState
-            }
-            )
-        }
+            newState[name]++
+            return newState
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name
-        if (name === "submit1") {
-            setComments((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.comments1.push(textForm.form1)
-                return newState
-            })
-            setTextForm((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.form1 = ""
-                return newState
-            })
-        }
-        else if (name === "submit2") {
-            setComments((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.comments2.push(textForm.form2)
-                return newState
-            })
-            setTextForm((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.form2 = ""
-                return newState
-            })
-        }
+        const formString = "form" + name.charAt(name.length - 1)
+        const commentString = "comments" + name.charAt(name.length - 1)
+        setComments((prevState) => {
+            const newState = {
+                ...prevState
+            }
+            newState[commentString].push(textForm[formString])
+            return newState
+        })
+        setTextForm((prevState) => {
+            const newState = {
+                ...prevState
+            }
+            newState[formString] = ""
+            return newState
+        })
     }
 
     const handleChange = (e) => {
         const value = e.target.value
         const name = e.target.name
-        if (name === "form1") {
-            setTextForm((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.form1 = value;
-                return newState
-            })
-        }
-        else if (name === "form2") {
-            setTextForm((prevState) => {
-                const newState = {
-                    ...prevState
-                }
-                newState.form2 = value;
-                return newState
-            })
-        }
+        setTextForm((prevState) => {
+            const newState = {
+                ...prevState
+            }
+            newState[name] = value;
+            return newState
+        })
     }
 
     return (
@@ -192,13 +117,13 @@ function Gallery() {
             <motion.div initial={{ scale: 1, opacity: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: '0.7' }}>
                 <table className="table">
                     <tbody>
-                        <img src='https://picsum.photos/seed/picsum/4000' alt="" className="images-inv" onLoad={imageLoaded("image1")} />
-                        <img src='https://picsum.photos/seed/seed2/4000' alt="" className="images-inv" onLoad={imageLoaded("image2")} />
+                        <img src='https://picsum.photos/seed/picsum/4000' alt="" className="images-inv" onLoad={e => imageLoaded(e)} name="loaded1" />
+                        <img src='https://picsum.photos/seed/seed2/4000' alt="" className="images-inv" onLoad={e => imageLoaded(e)} name="loaded2" />
                         <tr>
                             <td style={{ textAlign: "left" }} className="gallery-element">
                                 <div>
                                     <div>
-                                        {state.loaded1 ? <img src='https://picsum.photos/seed/picsum/4000' alt="" className="images" onDoubleClick={handleClickImg("image1")} /> : <img alt="" src={loading} className="loading" />}
+                                        {state.loaded1 ? <img src='https://picsum.photos/seed/picsum/4000' alt="" className="images" onDoubleClick={e => handleClickImg(e)} name="image1" /> : <img alt="" src={loading} className="loading" />}
                                         <div>
                                             <img src={heart} alt="" className={imageClicked.image1 ? "heart-showing" : "heart"} />
                                         </div>
@@ -217,7 +142,7 @@ function Gallery() {
                                                 </td>
                                                 <td>
                                                     <div style={{ textAlign: "right", marginLeft: '16px' }}>
-                                                        <button className="button-img" onClick={e => handleClick(e)} value="button1">Like</button>
+                                                        <button className="button-img" onClick={e => handleClick(e)} value="likes1">Like</button>
                                                         <h3 className="comment" style={{ fontSize: 30 }}><img src={thumbsUp} alt="" width="30px" height="30px"></img> {state.likes1}</h3>
                                                     </div>
                                                 </td>
@@ -230,7 +155,7 @@ function Gallery() {
                             <td style={{ textAlign: "left" }} className="gallery-element">
                                 <div>
                                     <div>
-                                        {state.loaded2 ? <img src='https://picsum.photos/seed/seed2/4000' alt="" className="images" onDoubleClick={handleClickImg("image2")} /> : <img alt="" src={loading} className="loading" />}
+                                        {state.loaded2 ? <img src='https://picsum.photos/seed/seed2/4000' alt="" className="images" onDoubleClick={e => handleClickImg(e)} name="image2" /> : <img alt="" src={loading} className="loading" />}
                                         <div>
                                             <img src={heart} alt="" className={imageClicked.image2 ? "heart-showing" : "heart"} />
                                         </div>
@@ -250,7 +175,7 @@ function Gallery() {
                                                 </td>
                                                 <td>
                                                     <div style={{ textAlign: "right", marginLeft: '16px' }}>
-                                                        <button className="button-img" onClick={e => handleClick(e)} value="button2">Like</button>
+                                                        <button className="button-img" onClick={e => handleClick(e)} value="likes2">Like</button>
                                                         <h3 className="comment" style={{ fontSize: 30 }}><img src={thumbsUp} alt="" width="30px" height="30px"></img> {state.likes2}</h3>
                                                     </div>
                                                 </td>

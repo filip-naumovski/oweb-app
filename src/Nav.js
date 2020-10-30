@@ -16,7 +16,7 @@ function Nav() {
 
     return (
         <nav>
-            <h3 className="header-text">OWEB Test App</h3>
+            <h3 className="header-text">OWEB App</h3>
             <ul className='nav-links'>
                 <Link style={{ textDecoration: "none" }} to='/'>
                     <li><button className='button'>Home</button></li>

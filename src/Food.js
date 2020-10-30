@@ -31,7 +31,7 @@ function Food() {
         <motion.div initial={{ scale: 1, opacity: 0, y: 2000 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: '1.2' }} className="musicDiv">
             <h1 style={{ textAlign: "center", fontFamily: "Verdana", marginTop: "2vh", fontSize: 40 }} className="comment">Favorite food:</h1>
             <motion.div className="verticalMenu" initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: '1' }}>
-                <button className="musicButton" onClick={(e) => handleClick(e)} name="mak">Macedonian Cuisine</button>
+                <button onClick={(e) => handleClick(e)} name="mak">Macedonian Cuisine</button>
                 {food["mak"]
                     ?
                     <motion.table initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: '1' }}>
@@ -52,7 +52,7 @@ function Food() {
                         </tr>
                     </motion.table>
                     : null}
-                <button className="musicButton" onClick={(e) => handleClick(e)} name="usa">American Cuisine</button>
+                <button onClick={(e) => handleClick(e)} name="usa">American Cuisine</button>
                 {food["usa"]
                     ?
                     <motion.table initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: '1' }}>
@@ -73,7 +73,7 @@ function Food() {
                         </tr>
                     </motion.table>
                     : null}
-                <button className="musicButton" onClick={(e) => handleClick(e)} name="asi">Asian Cuisine</button>
+                <button onClick={(e) => handleClick(e)} name="asi">Asian Cuisine</button>
                 {food["asi"]
                     ?
                     <motion.table initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: '1' }}>

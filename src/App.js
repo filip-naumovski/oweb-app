@@ -6,7 +6,8 @@ import Contact from './Contact';
 import Nav from './Nav';
 import Music from './Music';
 import Food from './Food';
-import Survey from './Survey'
+import Survey from './Survey';
+import Movies from './Movies';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route path="/contact" component={Contact} />
             <Route path="/music" component={Music} />
             <Route path="/food" component={Food} />
+            <Route path="/movies" component={Movies} />
             <Route path="/survey" component={Survey} />
           </Switch>
         </div>

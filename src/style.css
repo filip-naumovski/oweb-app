@@ -250,6 +250,7 @@ nav{
     max-width: 165px;
     margin-left: 90px;
     margin-top:-255px;
+    pointer-events: none;
 }
 .testdiv {
     border-radius: 20px;
@@ -400,6 +401,10 @@ nav{
     width: 300px;
 }
 
+.surveyForm input[type=radio] {
+    width: auto;
+}
+
 .surveyComment {
     width: 300px;
     height: 60px;
@@ -470,4 +475,23 @@ nav{
 .movies {
     background-image: url("./resources/cinema.png"), linear-gradient(rgba(153, 153, 153), rgb(207, 207, 207));
     background-size: cover;
+}
+
+.genderDiv {
+    display: inline-block;
+}
+
+.genderDiv div {
+    display: block;
+}
+
+.genderDiv label {
+    float: left;
+    clear: none;
+    display: block;
+}
+
+.genderDiv input {
+    float: left;
+    clear: none;
 }

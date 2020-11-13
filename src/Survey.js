@@ -4,11 +4,12 @@ import { motion } from 'framer-motion'
 
 function Survey() {
     const [state, setState] = useState({
-        name: "",
-        surname: "",
+        "first name": "",
+        "last name": "",
         liked: false,
         rating: 1,
-        comment: ""
+        comment: "",
+        gender: ""
     })
 
     const [submitted, setSubmitted] = useState(false)
@@ -61,7 +62,7 @@ function Survey() {
     return (
         <div>
             <h1 className={submitted ? "surveyPopup" : "surveyPopupHidden"}>Thanks for submitting!</h1>
-            <motion.div initial={{ scale: 1, opacity: 1, y: -1000, zIndex: -999 }} animate={{ opacity: 1, y: 0, zIndex: 1 }} transition={{ duration: '1.2' }}>
+            <motion.div initial={{ scale: 1, opacity: 1, y: 1000 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: '1.2' }}>
                 <table className="submitted-table" align="center">
                     {!submitted
                         ?
@@ -69,11 +70,21 @@ function Survey() {
                             <td>
                                 <h1 style={{ fontSize: 40 }}>Survey:</h1>
                                 <form name="submit" className="surveyForm" onSubmit={e => handleSubmit(e)}>
-                                    <input type="text" placeholder="Name" value={state.name} onChange={handleChange()} name="name" />
-                                    <input type="text" placeholder="Surname" value={state.surname} onChange={handleChange()} name="surname" />
+                                    <input type="text" placeholder="First name" value={state.name} onChange={handleChange()} name="first name" required />
+                                    <input type="text" placeholder="Last name" value={state.surname} onChange={handleChange()} name="last name" required />
+                                    <div className="genderDiv" onChange={handleChange()}>
+                                        <div>
+                                            <label for="male">Male</label>
+                                            <input type="radio" value="Male" name="gender" required />
+                                        </div>
+                                        <div>
+                                            <label for="female">Female</label>
+                                            <input type="radio" value="Female" name="gender" required />
+                                        </div>
+                                    </div>
                                     <div style={{ display: "flex" }}>
                                         <h3>Did you like the site?</h3>
-                                        <input style={{ width: '20px', marginTop: '4px' }} id="liked" type="checkbox" value={state.liked} onChange={handleChange()} name="liked" />
+                                        <input style={{ width: '20px', marginTop: '4px' }} id="liked" type="checkbox" value={state.liked} onChange={handleChange()} name="liked" required />
                                     </div>
                                     <div style={{ display: "flex" }}>
                                         <h3>Rating: </h3>
@@ -89,8 +100,9 @@ function Survey() {
                             <motion.div initial={{ scale: 1, opacity: 1, y: -1000, zIndex: -999 }} animate={{ opacity: 1, y: 0, zIndex: 1 }} transition={{ duration: '1.2' }}>
                                 <tr className="submittedTr">
                                     <td className="submittedTd">
-                                        <h1>Name: {state.name}</h1>
-                                        <h1>Surname: {state.surname}</h1>
+                                        <h1>Name: {state["first name"]}</h1>
+                                        <h1>Surname: {state["last name"]}</h1>
+                                        <h1>Gender: {state.gender}</h1>
                                         <h1>Rating: {state.rating}</h1>
                                         <h1>Liked: {state.liked ? "Yes" : "No"}</h1>
                                         <h1>Comment: </h1>

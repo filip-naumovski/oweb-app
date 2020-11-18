@@ -16,6 +16,8 @@ function Blog() {
 		date: "",
 	})
 
+	const [clicked, setClicked] = useState(false)
+
 	const leadingZero = (time) => {
 		if (time >= 0 && time <= 9) {
 			time = "0" + time
@@ -54,6 +56,10 @@ function Blog() {
 			newState.push(newObj)
 			return newState
 		})
+		setClicked(true)
+		setTimeout(() => {
+			setClicked(false)
+		}, 100)
 	}
 
 	const handleChange = (e) => {
@@ -73,6 +79,15 @@ function Blog() {
 			initial={{ scale: 1, opacity: 0 }}
 			animate={{ opacity: 1, x: 0 }}
 			transition={{ duration: "1.2" }}>
+			<h1
+				className="blogHeader"
+				style={{
+					fontSize: "60px",
+					textAlign: "center",
+					fontFamily: "sans-serif",
+				}}>
+				BLOG
+			</h1>
 			<div className="blogDiv">
 				<div className="formDiv">
 					<form onSubmit={(e) => handleSubmit(e)}>
@@ -106,7 +121,7 @@ function Blog() {
 				</div>
 				<div className="blog">
 					{posts.map((post, key) => (
-						<div className="blogPost" key={key}>
+						<div className={clicked ? "blogPostClicked" : "blogPost"} key={key}>
 							<h1>{post.title}</h1>
 							<h3>Date: {post.date}</h3>
 							<p>{post.content}</p>

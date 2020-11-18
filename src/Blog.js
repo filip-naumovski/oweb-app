@@ -30,6 +30,8 @@ function Blog() {
 		const currentDate = new Date()
 		let hours = currentDate.getHours().toString()
 		hours = leadingZero(hours)
+		let minutes = currentDate.getMinutes().toString()
+		minutes = leadingZero(minutes)
 		let seconds = currentDate.getSeconds().toString()
 		seconds = leadingZero(seconds)
 		const newDateString =
@@ -41,7 +43,7 @@ function Blog() {
 			" " +
 			hours +
 			":" +
-			currentDate.getMinutes() +
+			minutes +
 			":" +
 			seconds
 

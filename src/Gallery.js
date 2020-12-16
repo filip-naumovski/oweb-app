@@ -4,6 +4,7 @@ import thumbsUp from "./resources/thumbs-up.png";
 import loading from "./resources/loading.svg";
 import heart from "./resources/heart.png";
 import { motion } from "framer-motion";
+import ls from "local-storage";
 
 function Gallery() {
   const [state, setState] = useState({
@@ -32,6 +33,23 @@ function Gallery() {
     comments1: [],
     comments2: [],
   });
+
+  useEffect(() => {
+    setComments({
+      comments1: ls.get("comments1") || [],
+      comments2: ls.get("comments2") || [],
+    });
+    setStrings({
+      image1: ls.get("image1") || "",
+      image2: ls.get("image2") || "",
+    });
+    setState({
+      likes1: ls.get("likes1") || 0,
+      likes2: ls.get("likes2") || 0,
+      loaded1: ls.get("loaded1") || "",
+      loaded2: ls.get("loaded2") || "",
+    });
+  }, []);
 
   const [seed, setSeed] = useState("");
 
@@ -67,6 +85,7 @@ function Gallery() {
         ...prevState,
       };
       newState[likeString]++;
+      ls.set(likeString, newState[likeString]);
       return newState;
     });
     setTimeout(
@@ -89,6 +108,7 @@ function Gallery() {
         ...prevState,
       };
       newState[name]++;
+      ls.set(name, newState[name]);
       return newState;
     });
   };
@@ -103,6 +123,7 @@ function Gallery() {
         ...prevState,
       };
       newState[commentString].push(textForm[formString]);
+      ls.set(commentString, newState[commentString]);
       return newState;
     });
     setTextForm((prevState) => {
@@ -142,6 +163,7 @@ function Gallery() {
             ...prevState,
           };
           newState[name] = reader.result;
+          ls.set(name, reader.result);
           return newState;
         });
         setState((prevState) => {
@@ -150,6 +172,7 @@ function Gallery() {
           };
           const loadedString = "loaded" + name.charAt(name.length - 1);
           newState[loadedString] = true;
+          ls.set(loadedString, true);
           return newState;
         });
       };

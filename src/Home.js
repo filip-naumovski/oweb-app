@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function Home() {
   useEffect(() => {
     jQuery(function ($) {
-      $("#rss-feed").rss("http://www.thegatewaypundit.com/feed", {
+      $("#rss-feed").rss("https://www.politico.com/rss/politicopicks.xml", {
         entryTemplate:
           '<div class="newsContent"><a href="{url}" target="_blank"><div>{title}<br/>{teaserImage}</div></a></div>',
         limit: 3,

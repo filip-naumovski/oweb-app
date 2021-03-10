@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.2.2",
     "@types/react-transition-group": "^4.4.0",
     "@types/youtube": "0.0.38",
-    "eslint": "^7.13.0",
+    "eslint": "^7.21.0",
     "framer-motion": "^2.9.4",
     "jquery": "^3.5.1",
     "jquery-rss": "^4.3.0",
@@ -86,7 +86,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.1",
     "react-use-localstorage": "^3.5.3"
   }
 }

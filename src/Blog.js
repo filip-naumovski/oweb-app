@@ -1,13 +1,11 @@
 import "./style.css";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import BlogElement from "./BlogElement";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
-
-  const nameRef = useRef(null);
-  const contentRef = useRef(null);
-  const titleRef = useRef(null);
+  const currentDate = new Date(Date.now());
 
   useEffect(() => {
     fetch("http://localhost:53771/api/BlogPosts", {
@@ -22,8 +20,8 @@ function Blog() {
       .then(() => {
         setPosts((prevState) => {
           const newState = [...prevState];
-          prevState.forEach((element) => {
-            const newDate = Date(element.date);
+          newState.forEach((element) => {
+            const newDate = new Date(element.date + "Z");
             element.date = newDate.toString();
           });
           return newState;
@@ -39,16 +37,7 @@ function Blog() {
     id: 0,
   });
 
-  const currentDate = new Date();
-
   const [clicked, setClicked] = useState(false);
-
-  const leadingZero = (time) => {
-    if (time >= 0 && time <= 9) {
-      time = "0" + time;
-    }
-    return time;
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -141,7 +130,6 @@ function Blog() {
         <div className="formDiv">
           <form onSubmit={(e) => handleSubmit(e)}>
             <input
-              ref={nameRef}
               type="text"
               name="name"
               placeholder="Name"
@@ -149,7 +137,6 @@ function Blog() {
               onChange={(e) => handleChange(e)}
             />
             <input
-              ref={titleRef}
               type="text"
               name="title"
               placeholder="Title"
@@ -157,7 +144,6 @@ function Blog() {
               onChange={(e) => handleChange(e)}
             />
             <textarea
-              ref={contentRef}
               name="content"
               placeholder="Share something!"
               value={currentPost.content}
@@ -170,19 +156,13 @@ function Blog() {
         </div>
         <div className="blog">
           {posts.map((post, key) => {
-            const currentId = post.id;
             return (
-              <div
-                className={clicked ? "blogPostClicked" : "blogPost"}
+              <BlogElement
                 key={post.id}
-              >
-                <h1>{post.title}</h1>
-                <h3>{post.date}</h3>
-                <br></br>
-                <p>{post.content}</p>
-                <button onClick={() => handleDelete(currentId)}>Delete</button>
-                <h3 className="signature">{post.name}</h3>
-              </div>
+                class={clicked ? "blogPostClicked" : "blogPost"}
+                post={post}
+                handleDelete={handleDelete}
+              />
             );
           })}
         </div>

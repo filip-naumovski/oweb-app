@@ -8,7 +8,7 @@ function Blog() {
   const currentDate = new Date(Date.now());
 
   useEffect(() => {
-    fetch("http://localhost:53771/api/BlogPosts", {
+    fetch("http://localhost:5000/api/BlogPosts", {
       mode: "cors",
       method: "GET",
     })
@@ -42,7 +42,7 @@ function Blog() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:53771/api/BlogPosts", {
+    fetch("http://localhost:5000/api/BlogPosts", {
       mode: "cors",
       method: "POST",
       headers: {
@@ -92,7 +92,7 @@ function Blog() {
   const handleDelete = (cId) => {
     const id = cId;
     console.log(id);
-    fetch("http://localhost:53771/api/BlogPosts/" + id, {
+    fetch("http://localhost:5000/api/BlogPosts/" + id, {
       mode: "cors",
       method: "DELETE",
     }).then(() => {
@@ -159,7 +159,7 @@ function Blog() {
             return (
               <BlogElement
                 key={post.id}
-                class={clicked ? "blogPostClicked" : "blogPost"}
+                className={clicked ? "blogPostClicked" : "blogPost"}
                 post={post}
                 handleDelete={handleDelete}
               />
